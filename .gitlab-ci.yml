@@ -14,7 +14,7 @@ deploy_to_heroku:
   script:
     - git lfs pull
     # Login to Heroku registry
-    - docker login --username=_ --password=$HEROKU_AUTH_TOKEN registry.heroku.com
+    - docker login --username=hamcastle --password=$HEROKU_AUTH_TOKEN registry.heroku.com
     # Build the docker image locally
     - docker build -t registry.heroku.com/pet-name-network-webapp/web .
     # Push docker image to Heroku registry to serve

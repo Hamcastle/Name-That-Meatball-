@@ -15,5 +15,4 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-ENTRYPOINT [ "python" , "app.py"]
-CMD[“echo”, “any string”]
+CMD [ "python" , "app.py"]

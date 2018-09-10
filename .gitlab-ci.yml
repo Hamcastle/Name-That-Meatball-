@@ -14,12 +14,12 @@ deploy_to_heroku:
   script:
     - git lfs pull
     # Login to Heroku registry
-    - docker login --username=_ --password=$HEROKU_AUTH_TOKEN registry.heroku.com
+    - docker login --email=_ --username=_ --password=$HEROKU_AUTH_TOKEN registry.heroku.com
     # Build the docker image locally
     - docker build -t registry.heroku.com/pet-name-network-webapp/web .
     # Push docker image to Heroku registry to serve
     - docker push registry.heroku.com/pet-name-network-webapp/web
-    - ./heroku-container-release.sh
+    - docker run --rm -e HEROKU_AUTH_TOKEN=$HEROKU_AUTH_TOKEN wingrunr21/alpine-heroku-cli container:release web --app pet-name-network-webapp
     ### Push to Gitlab registry
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
     - docker build -t registry.gitlab.com/hamcastle/pet_name_network_webapp .

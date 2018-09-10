@@ -14,5 +14,5 @@ RUN pip install Werkzeug Flask numpy Keras gevent pillow h5py tensorflow
 COPY . .
 
 RUN pip install -r requirements.txt
-
+##
 CMD [ "python" , "app.py"]

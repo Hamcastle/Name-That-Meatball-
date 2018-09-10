@@ -19,7 +19,7 @@ deploy_to_heroku:
     - docker build -t registry.heroku.com/pet-name-network-webapp/web .
     # Push docker image to Heroku registry to serve
     - docker push registry.heroku.com/pet-name-network-webapp/web
-    - docker run --rm -e HEROKU_AUTH_TOKEN=$HEROKU_AUTH_TOKEN wingrunr21/alpine-heroku-cli container:release web --app pet-name-network-webapp
+    - ./heroku-container-release.sh
     ### Push to Gitlab registry
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
     - docker build -t registry.gitlab.com/hamcastle/pet_name_network_webapp .

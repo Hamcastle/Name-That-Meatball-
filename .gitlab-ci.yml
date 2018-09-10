@@ -11,8 +11,6 @@ deploy_to_heroku:
     - apk add openssl --update-cache
     - wget -qO- https://github.com/git-lfs/git-lfs/releases/download/v2.1.1/git-lfs-linux-amd64-2.1.1.tar.gz | tar xz
     - mv git-lfs-*/git-lfs /usr/bin/ && rm -rf git-lfs-* && git lfs install && git lfs pull
-    - apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community nodejs-npm
-    - npm i -g heroku
   script:
     - git lfs pull
     # Login to Heroku registry
@@ -21,7 +19,7 @@ deploy_to_heroku:
     - docker build -t registry.heroku.com/pet-name-network-webapp/web .
     # Push docker image to Heroku registry to serve
     - docker push registry.heroku.com/pet-name-network-webapp/web
-    - heroku container:release web --app pet-name-network-webapp
+    - docker run --rm -e HEROKU_AUTH_TOKEN=$HEROKU_AUTH_TOKEN wingrunr21/alpine-heroku-cli container:release web --app pet-name-network-webapp
     ### Push to Gitlab registry
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
     - docker build -t registry.gitlab.com/hamcastle/pet_name_network_webapp .

@@ -3,25 +3,39 @@
 {% block content %}
 
 <div>
-	<h2> What Is This?</h2>
 
-	<p>In late 2016, my partner and I took an adorable, jet-black baby kitteh from a friend who'd found him--along with a giant litter of his eerie but equally adorable doppelganger siblings--under her porch. Naturally we needed to give him a name. My partner already had a cat when we met, so I claimed the choice of the new little fella's moniker should be mine, as she'd had control over effectively half the pet name-space in the household.</p> 
+	<h2>What Is This Stupid Thing?</h2>
+	
+	<p>
+		A name can be thought of as a kind of caption, describing or summarizing the thing to which it points. Probably the clearest and least troubled use case for this way of thinking about names is for <i>our pets</i>. We've all seen plenty of orange cats named Garfield, black cats named Soot or Night, and Great Danes named Marmaduke. Some of this is just kneejerk, but I've always wondered if the kinds of information we use to make those decisions could be formalized somehow. To that end, I've made this deep neural network that attempts to bridge image-level features of pictures of our pets with their names.
+	</p>
 
-	<p>Needless to say, she disagreed.</p>
+	<h2>Why Make Something So Stupid?</h2>
 
-	<p>Our (light-hearted) disagreement and the many related ones that followed hinged on an important and shared if unstated and differently interpreted premise. On some level, we were really agreeing that names and character, and thus to a possible extent names and destiny, are connected. This makes them too important to allow their assignment to fall to a single person's decision making. The argument therefore just stemmed from our differing senses of just who got to wield such awesome, fated power. </p>
+	<p>
+		In late 2016, my partner and I adopted a baby kitteh. She had a cat at the time, so I argued that I should get to choose a name for the newest member of Boston's hottest, freshest vape crew (BLAZ3 INFINITY OP). While we hashed the issue out, the kitteh remained "Orange" (the litter he was found in was all black, and the woman who found them used colored collars to tell them apart). We ultimately reached a compromise, but the whole business left me hankering for an unbiased, automatic solution that could produce names for future BLAZ3 INFINITY crew members in a way we could both get behind.
+	</p>
 
-	<p>Meanwhile, little "Orange"--the person who found his litter used colored collars to tell them apart--awkwardly remained "Orange" for the week or so it took us to hash the problem out.</p>
+	<h2>What Do I Do With This Stupid Thing?</h2>
 
-	<p>In the end we reached a satisfactory compromise, and young "Hamish" has become a fat and happy member of our home. But the whole experience made me think about the idea of names in new ways. More: it gave me a new respect for their power and importance. It also made me long, as I often do when the stakes feel high and the evidence for any one position is at best mixed, for impartial rule-governed arbitration (more on that shortly). </p>
+	<p>
+		Name things: cats, dogs, cars, w/e. The power of Adam is yours! It's trained to work on pets, but it'll spit out a name no matter what you put in the form. That being said, there's been a lot of what I think is entirely fair, interesting discussion on the web of late about <a href="https://www.politico.com/agenda/story/2018/02/07/algorithmic-bias-software-recommendations-000631">"algorithmic racism"</a>. In order to head off any potential incidents, I'm stating here again that if you put a picture of a person in there, whatever you get back out has been produced outside the intended scope of operation of the algorithm, and that you do so without my blessing, and down the line you won't be able to put pictures of people in there at all.
+	</p>
 
-	<p>In all the resultant brow-furrowing, something new occured to me. I really felt for the first time that the kind of thinking about names we were exhibiting made them much like a caption: <i> as a word or words that  describe or summarize something big and complex -- a person, a place, an object -- in a succinct way</i>. They're a lot of other things too, but this sense of name-as-caption seems to me most clearly and least problematically exemplified in the way we name <i>our pets</i>.</p> 
+	<h2>How Does This Stupid Thing Work?</h2>
 
-	<p> We see this when we feel inclined call a black cat "Sootie", or a dog with stripes "Stripey", or otherwise name them because they have a superficial resemblance to a kind of food (e.g., I think I've known at least a few red or orange cats and dogs named "Pizza") or to a famous figure whose characteristics or behavior the animal matches (ditto the above, but for "Garfield"). </p>
+	<p>
+		I scraped a set of images and names for 10000 randomly cats and dogs using Aaron Schlegel's excellent <a href="https://github.com/aschleg/petpy">PetPy</a> python wrapper for the PetFinder API. With this data, I trained an image captioning network with Keras and Tensorflow in Python following the steps <a href="https://machinelearningmastery.com/develop-a-deep-learning-caption-generation-model-in-python/">described in this guide</a>. The biggest change was using a slightly simpler convolutional neural network to extract image features during model training and in prediction for new images, as the whole business' hosted on Heroku, and VGG16 doesn't fit into memory on the cheapo hosting plan. Also note that the image is upload to the server temporarily, then deleted, so it's not stored any longer than is required to run the app.
+	</p>
 
-	<p>This network, <b>Name!That!Meatball!</b>, attempts to capture and leverage these relationships to generate pet names easily and automatically. This one's for you, past Dylan.</p>
+	<h2>What's Next For This Stupid Thing?</h2>
 
-	<h2>Name!That!Meatball!</h2>
+	<ul>
+		<li>Automatic human detection and filtering</li>
+		<li>More detailed explanation of what the underlying algorithm does and how it works</li>
+		<li>Demonstration of image feature filter activations for uploaded images</li>
+	</ul>
+
 
 
 </div>

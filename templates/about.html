@@ -28,14 +28,6 @@
 		I scraped a set of images and names for 10000 randomly cats and dogs using Aaron Schlegel's excellent <a href="https://github.com/aschleg/petpy">PetPy</a> python wrapper for the PetFinder API. With this data, I trained an image captioning network with Keras and Tensorflow in Python following the steps <a href="https://machinelearningmastery.com/develop-a-deep-learning-caption-generation-model-in-python/">described in this guide</a>. The biggest change was using a slightly simpler convolutional neural network to extract image features during model training and in prediction for new images, as the whole business' hosted on Heroku, and VGG16 doesn't fit into memory on the cheapo hosting plan. Also note that the image is upload to the server temporarily, then deleted, so it's not stored any longer than is required to run the app.
 	</p>
 
-	<h2>What's Next For This Stupid Thing?</h2>
-
-	<ul>
-		<li>Automatic human detection and filtering</li>
-		<li>More detailed explanation of what the underlying algorithm does and how it works</li>
-		<li>Demonstration of image feature filter activations for uploaded images</li>
-	</ul>
-
 
 
 </div>

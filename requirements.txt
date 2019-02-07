@@ -64,7 +64,7 @@ pygments=2.2.0=py35h0f41973_0
 pyqt=5.9.2=py35h22d08a2_1
 python=3.5.6=hc3d631a_0
 python-dateutil=2.7.3=py35_0
-pyyaml=3.13=py35h14c3975_0
+pyyaml>=4.2b1
 pyzmq=17.1.2=py35h14c3975_0
 qt=5.9.6=h8703b6f_2
 qtconsole=4.3.1=py35h4626a06_0

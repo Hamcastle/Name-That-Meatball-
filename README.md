@@ -1,6 +1,6 @@
 Sometimes you've got a cat or a dog and you just don't know what to call the dang beastie! This app might help. A name's just a kind of caption for a visual object, if you think about it, and we have excellent tech out there to do just that kind of job. 
 
-Name!That!Meatball! uses a simple image captioning deep neural network developed in Keras over a corpus of several thousand images of pets, along with their names, scraped from PetFinder using [petpy](https://github.com/aschleg/petpy). It will spin up a simple local web-app that will allow you to drag a picture into it and get a pet name back.
+**Name!That!Meatball!** uses a simple image captioning deep neural network developed in Keras over a corpus of several thousand images of pets, along with their names, scraped from PetFinder using [petpy](https://github.com/aschleg/petpy). It will spin up a simple local web-app that will allow you to drag a picture into it and get a pet name back.
 
 ## Here's an example of what kind of results you can expect:
 ![examp_one](example_output.png)

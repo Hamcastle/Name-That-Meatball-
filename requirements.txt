@@ -75,9 +75,9 @@ simplegeneric=0.8.1=py35_2
 sip=4.19.12=py35he6710b0_0
 six=1.11.0=py35_1
 sqlite=3.24.0=h84994c4_0
-tensorboard=1.10.0=py35hf484d3e_0
-tensorflow=1.10.0=mkl_py35heddcb22_0
-tensorflow-base=1.10.0=mkl_py35h3c3e929_0
+tensorboard
+tensorflow
+tensorflow-base
 termcolor=1.1.0=py35_1
 tk=8.6.8=hbc83047_0
 tornado=5.1=py35h14c3975_0

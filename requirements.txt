@@ -52,7 +52,7 @@ ncurses=6.1=hf484d3e_0
 numpy=1.15.1=py35h1d66e8a_0
 numpy-base=1.15.1=py35h81de0dd_0
 openssl=1.0.2p=h14c3975_0
-parso=0.3.1=py35_0
+parso
 pcre=8.42=h439df22_0
 pexpect=4.6.0=py35_0
 pickleshare=0.7.4=py35hd57304d_0
